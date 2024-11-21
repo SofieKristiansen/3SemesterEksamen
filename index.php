@@ -6,7 +6,7 @@ require "settings/init.php";
 <head>
 	<meta charset="utf-8">
 	
-	<title>Forsiden</title>
+	<title>Forside</title>
 	
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
