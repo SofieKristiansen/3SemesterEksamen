@@ -11,42 +11,22 @@ require "settings/init.php";
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
 	<meta name="copyright" content="Information om copyright">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 	
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
-<div class="row g-2">
-	<?php
-	$produkter = $db->sql("SELECT * FROM produkter");
-	foreach($produkter as $produkt) {
-		?>
-		<div class="col-12 col-md-6">
-			<div class="card w-100">
-				<div class="card-header">
-					<?php
-					echo $produkt->prodNavn;
-					?>
-				</div>
-				<div class="card-body">
-					<?php
-					// Indsæt andet felt fra database
-					?>
-				</div>
-				<div class="card-footer text-muted">
-					<?php
-					// Indsæt andet felt fra database
-					?>
-				</div>
-			</div>
-		</div>
-		<?php
-	}
-	?>
+<div>
+
+
 </div>
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
