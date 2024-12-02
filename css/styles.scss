@@ -10,7 +10,14 @@ $link-decoration: none;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-	"farve": $cyan-400,
+				"tekstfarve": #fefbf6,
+				"baggrund": #24251a,
+				"primærkort": #4e503e,
+				"sekundærkort": #6c6f57,
+				"primærknap": #d47d0d,
+				"sekundærknap": #24251a,
+				"primærikon": #d47d0d,
+				"sekundærikon": #fefbf6,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
