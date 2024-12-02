@@ -11,6 +11,8 @@ $link-decoration: none;
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
+
+
 // 4. Include any default map overrides here
 $custom-colors: (
 				"tekstfarve": #fefbf6,
@@ -21,10 +23,41 @@ $custom-colors: (
 				"sekundærknap": #24251a,
 				"primærikon": #d47d0d,
 				"sekundærikon": #fefbf6,
+				"navbar":#171710,
 );
 
+// Denne kode genererer automatisk CSS-variabler baseret på $custom-colors-mappet, så de kan bruges i JavaScript og direkte i CSS som f.eks. var(--primærikon).
+:root {
+	@each $key, $value in $custom-colors {
+		--#{$key}: #{$value};
+	}
+}
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import "bootstrapComponents";
 
 // 5. Du kan lave styling her...
+
+
+h1 {
+	color: map-get($custom-colors, "tekstfarve");
+	font-family: "Montserrat", sans-serif;
+}
+
+h4 {
+	color: map-get($custom-colors, "tekstfarve");
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500; // Medium skriftstørrelse
+
+}
+
+h6 {
+	color: map-get($custom-colors, "tekstfarve");
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500; // Medium skriftstørrelse
+}
+
+.brødtekst {
+	color: map-get($custom-colors, "tekstfarve");
+	font-family: "inter", sans-serif;
+}
