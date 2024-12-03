@@ -26,15 +26,18 @@
 <!-- Success Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5 position-relative">
+
+      <!-- Canvas til konfetti -->
+      <canvas id="confettiCanvas" class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 1055; pointer-events: none;"></canvas>
+
+      <div class="modal-header border-bottom pt-5">
       </div>
-      <div class="modal-body border-bottom text-center">
-        <h5 class="modal-title border-bottom pb-3" id="successModalLabel">Tillykke! Du har gennemført en udfordring</h5>
-        <h6>Du har samlet:</h6>
-        <h1 class="display-4">50 Point</h1>
-        <p class="brødtekst">Du har hjulpet dine klassekammerater til flere point og gjort en god gerning for klimaet. Fortsæt det gode arbejde!</p>
+      <div class="modal-body border-bottom">
+        <h5 class="modal-title pb-4 text-center" id="successModalLabel">Tillykke! Du har gennemført en udfordring</h5>
+        <h6 class="text-center">Du har samlet</h6>
+        <h1 class="display-4 text-center fw-medium">50 Point</h1>
+        <p class="brødtekst pt-2 text-center">Du har hjulpet dine klassekammerater til flere point og gjort en god gerning for klimaet. Fortsæt det gode arbejde!</p>
       </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" data-bs-dismiss="modal">Få dine point</button>
@@ -42,3 +45,4 @@
     </div>
   </div>
 </div>
+

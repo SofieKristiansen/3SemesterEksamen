@@ -226,6 +226,7 @@
 <br>
 
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script src="https://kit.fontawesome.com/e1b81ca238.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="header.js"></script>
@@ -244,6 +245,7 @@
                 const modalLabel = document.getElementById("globalModalLabel");
                 const modalBody = document.querySelector("#globalModal .modal-body p");
                 const confirmFinishButton = document.getElementById("confirmFinishButton");
+                const confettiCanvas = document.getElementById("confettiCanvas"); // Canvas til konfetti
 
                 finishButtons.forEach(button => {
                     button.addEventListener("click", () => {
@@ -260,7 +262,6 @@
 
                         // Tilføj event til "Afslut udfordring"-knappen
                         confirmFinishButton.onclick = () => {
-
                             // Luk "globalModal"
                             const globalModal = bootstrap.Modal.getInstance(document.getElementById("globalModal"));
                             if (globalModal) {
@@ -271,13 +272,37 @@
                             setTimeout(() => {
                                 const successModal = new bootstrap.Modal(document.getElementById("successModal"));
                                 successModal.show();
+
+                                // Find canvas inde i modal
+                                const confettiCanvas = document.querySelector("#successModal #confettiCanvas");
+
+                                // Aktivér konfetti, når successModal vises
+                                const myConfetti = confetti.create(confettiCanvas, { resize: true });
+
+                                // Lav en langsommere og mere jævn konfettieffekt
+                                myConfetti({
+                                    particleCount: 600, // Antal partikler
+                                    spread: 120, // Spredning af konfettien
+                                    startVelocity: 50, // Start hastighed (lavere værdi = langsommere)
+                                    gravity: 1.5, // Gravitationsstyrke (lavere værdi = langsommere fald)
+                                    scalar: 1.3, // Størrelse på partiklerne
+                                    origin: {x: 2, y: 0.9 } // Startpunkt (midten af skærmen)
+                                });
+
+                                // Stop konfettien efter 10 sekunder
+                                setTimeout(() => {
+                                    confettiCanvas.getContext("2d").clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                                }, 10000); // Tid for at rydde canvas
                             }, 300);
+
+
                         };
                     });
                 });
             })
             .catch(error => console.error("Fejl ved indlæsning af modals:", error));
     });
+
 
 
 
