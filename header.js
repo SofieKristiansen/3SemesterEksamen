@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const pageData = {
                 "dashboard.html": null,
                 "udfordringer.html": "Udfordringer",
+                "leaderboard.html": "Placeringer",
             };
 
             if (pageData[currentPage] === null) {
