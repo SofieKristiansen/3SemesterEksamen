@@ -1,28 +1,236 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Udfordringer</title>
+    <title>Udfordringer</title>
 
-  <meta name="robots" content="All">
-  <meta name="author" content="Udgiver">
-  <meta name="copyright" content="Information om copyright">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="Klima, Klasse, Konkurrence, Miljøvenlighed, Skole, ESG">
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Klima, Klasse, Konkurrence, Miljøvenlighed, Skole, ESG">
 
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 
 </head>
 <body class="bg-baggrund text-tekstfarve">
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!-- Header -->
 <div id="header-placeholder"></div>
+
+<br>
+<br>
+
+<aside>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <img src="infografik1.svg" alt="Miljø" class="img-fluid clickable" data-info="miljo">
+            </div>
+            <div class="col">
+                <img src="infografik2.svg" alt="Innovation" class="img-fluid clickable" data-info="innovation">
+            </div>
+            <div class="col">
+                <img src="infografik3.svg" alt="Samarbejde" class="img-fluid clickable" data-info="samarbejde">
+            </div>
+        </div>
+    </div>
+</aside>
+
+<br>
+<br>
+<br>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card bg-primærkort rounded-5">
+          <h5 class="fs-6 fs-md-4 fs-lg-4 mx-4 text-center pt-5 pb-4">
+            Klar en udfordring, gør en forskel, og hjælp din klasse til tops!
+          </h5>
+
+          <!-- Accordion til udfordringer -->
+          <div class="accordion mt-4 mx-4" id="challengeAccordion">
+
+            <!-- Udfordring: (Saml affald i skolegården) -->
+            <div class="accordion-item mb-3 rounded-5">
+              <p class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                        type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Saml affald i skolegården
+                </button>
+              </p>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                   data-bs-parent="#challengeAccordion">
+                <div class="accordion-body">
+                  <p class="brødtekstSekundær mt-2">
+                    Hjælp med at holde skolegården ren og fri for skrald! Saml mindst 10 stykker affald, og gør en forskel for miljøet og jeres klasse.
+                  </p>
+
+                  <!-- Tidspunkt -->
+                  <div class="d-flex align-items-center mt-4">
+                    <i class="fa-regular text-success fa-clock me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Udløber den 29/11 kl. 16:00</p>
+                  </div>
+
+                  <!-- Point -->
+                  <div class="d-flex align-items-center mt-2">
+                    <i class="fa-regular text-primærikon fa-star me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Optjen 50 point</p>
+                  </div>
+
+                  <!-- Lokal MP4 Video -->
+                  <div class="ratio ratio-16x9 mt-4">
+                    <video controls>
+                      <source src="videos/skolegård-udfordring.mp4" type="video/mp4">
+                      Din browser understøtter ikke videoafspilning.
+                    </video>
+                  </div>
+
+                  <div class="pt-4">
+                    <p class="brødtekstSekundær">
+                      Hver handling tæller – lad os gøre skolegården til et bedre sted for alle!
+                    </p>
+                  </div>
+
+                  <!-- Call-to-action knap -->
+                  <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-primærknap brødtekst rounded-pill">Tag udfordring</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Udfordring: Præsentér en bæredygtig idé -->
+            <div class="accordion-item mb-3 rounded-5">
+              <p class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                        type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Præsentér en bæredygtig idé
+                </button>
+              </p>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                   data-bs-parent="#challengeAccordion">
+                <div class="accordion-body">
+                  <p class="brødtekstSekundær mt-2">
+                    Udvikl en idé, der kan forbedre bæredygtigheden på skolen. Præsenter din idé for klassekammeraterne og inspirér til handling.
+                  </p>
+
+                  <!-- Tidspunkt -->
+                  <div class="d-flex align-items-center mt-4">
+                    <i class="fa-regular text-success fa-clock me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Udløber den 30/11 kl. 12:00</p>
+                  </div>
+
+                  <!-- Point -->
+                  <div class="d-flex align-items-center mt-2">
+                    <i class="fa-regular text-primærikon fa-star me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Optjen 100 point</p>
+                  </div>
+
+                  <!-- Lokal MP4 Video -->
+                  <div class="ratio ratio-16x9 mt-4">
+                    <video controls>
+                      <source src="videos/bæredygtig-idé.mp4" type="video/mp4">
+                      Din browser understøtter ikke videoafspilning.
+                    </video>
+                  </div>
+
+                  <div class="pt-4">
+                    <p class="brødtekstSekundær">
+                      Lad os sammen skabe en grønnere fremtid på skolen!
+                    </p>
+                  </div>
+
+                  <!-- Call-to-action knap -->
+                  <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-primærknap brødtekst rounded-pill">Tag udfordring</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Udfordring: Tag et bad på under 5 minutter -->
+            <div class="accordion-item mb-3 rounded-5">
+              <p class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                        type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Tag et bad på under 5 minutter
+                </button>
+              </p>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                   data-bs-parent="#challengeAccordion">
+                <div class="accordion-body">
+                  <p class="brødtekstSekundær mt-2">
+                    Spar på vandet ved at tage et hurtigt bad. Konkurrér med dine klassekammerater om at klare det på kortest tid!
+                  </p>
+
+                  <!-- Tidspunkt -->
+                  <div class="d-flex align-items-center mt-4">
+                    <i class="fa-regular text-success fa-clock me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Udløber den 01/12 kl. 18:00</p>
+                  </div>
+
+                  <!-- Point -->
+                  <div class="d-flex align-items-center mt-2">
+                    <i class="fa-regular text-primærikon fa-star me-2"></i>
+                    <p class="mb-0 brødtekstSekundær">Optjen 25 point</p>
+                  </div>
+
+                  <!-- Lokal MP4 Video -->
+                  <div class="ratio ratio-16x9 mt-4">
+                    <video controls>
+                      <source src="videos/hurtigt-bad.mp4" type="video/mp4">
+                      Din browser understøtter ikke videoafspilning.
+                    </video>
+                  </div>
+
+                  <div class="pt-4">
+                    <p class="brødtekstSekundær">
+                      Spar vand – gør en forskel for miljøet!
+                    </p>
+                  </div>
+
+                  <!-- Call-to-action knap -->
+                  <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-primærknap brødtekst rounded-pill">Tag udfordring</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <div id="navbar-placeholder"></div>
@@ -32,6 +240,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="header.js"></script>
 <script src="navbar.js"></script>
+
+
+<script>
+
+</script>
 
 </body>
 </html>
