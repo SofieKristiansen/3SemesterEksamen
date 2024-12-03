@@ -244,6 +244,16 @@
 
 <script>
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const triggerButton = document.querySelector(`[data-bs-target="${hash}"]`);
+      if (triggerButton) {
+        triggerButton.click(); // Simuler klik på knappen for at åbne accordion
+      }
+    }
+  });
+
 </script>
 
 </body>
