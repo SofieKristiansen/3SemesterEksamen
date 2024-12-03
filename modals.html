@@ -1,15 +1,20 @@
-<!-- Global Modal -->
+<!-- Modal eksempel -->
 <div class="modal fade" id="globalModal" tabindex="-1" aria-labelledby="globalModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
-      <div class="modal-header border-0">
-        <h5 class="modal-title" id="globalModalLabel">Er du sikker på at du vil afslutte udfordringen?</h5>
+      <!-- Modal Header med grænse -->
+      <div class="modal-header border-bottom">
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+
+      <!-- Modal Body med grænse -->
+      <div class="modal-body border-bottom">
+        <h5 class="modal-title pb-3 " id="globalModalLabel">Er du sikker på at du vil afslutte udfordringen?</h5>
         <p class="brødtekst">Hvis du er færdig med udfordringen, kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.</p>
       </div>
-      <div class="modal-footer border-0">
+
+      <!-- Modal Footer med grænse -->
+      <div class="modal-footer border-top">
         <button type="button" class="btn btn-sekundærknap rounded-pill" data-bs-dismiss="modal">Annullér</button>
         <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" id="confirmFinishButton">Afslut udfordring</button>
       </div>
@@ -17,15 +22,16 @@
   </div>
 </div>
 
+
 <!-- Success Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
       <div class="modal-header border-0">
-        <h5 class="modal-title" id="successModalLabel">Tillykke du har gennemført en udfordring</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body border-bottom text-center">
+        <h5 class="modal-title border-bottom pb-3" id="successModalLabel">Tillykke! Du har gennemført en udfordring</h5>
         <h6>Du har samlet:</h6>
         <h1 class="display-4">50 Point</h1>
         <p class="brødtekst">Du har hjulpet dine klassekammerater til flere point og gjort en god gerning for klimaet. Fortsæt det gode arbejde!</p>
