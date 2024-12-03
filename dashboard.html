@@ -213,32 +213,7 @@
 
     </div>
 
-
-    <!-- Globalt Modal -->
-    <div class="modal fade" id="globalModal" tabindex="-1" aria-labelledby="globalModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-primærkort text-tekstfarve rounded-5">
-                <!-- Header med streg under -->
-                <div class="modal-header border-bottom border-tekstfarve">
-
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- Body med streg under -->
-                <div class="modal-body border-bottom border-tekstfarve">
-                    <h5 class="modal-title pb-4" id="globalModalLabel">Er du sikker på at du vil afslutte udfordringen?</h5>
-                    <p class="brødtekst">Hvis du er færdig med udfordringen, kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.</p>
-                </div>
-                <!-- Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sekundærknap rounded-pill" data-bs-dismiss="modal">Annullér</button>
-                    <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" id="confirmFinishButton">Afslut udfordring</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    <div id="modals-placeholder"></div>
 
 </main>
 
@@ -259,33 +234,52 @@
 <script>
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Hent alle afslut udfordring-knapper
-        const finishButtons = document.querySelectorAll('[data-bs-target="#globalModal"]');
-        const modalLabel = document.getElementById("globalModalLabel");
-        const modalBody = document.querySelector("#globalModal .modal-body p");
-        const confirmFinishButton = document.getElementById("confirmFinishButton");
+        fetch("modals.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("modals-placeholder").innerHTML = data;
 
-        finishButtons.forEach(button => {
-            button.addEventListener("click", (event) => {
-                const challengeId = button.getAttribute("data-challenge-id");
+                // Flyt al logik herind, når modalerne er blevet indlæst
+                const finishButtons = document.querySelectorAll('[data-bs-target="#globalModal"]');
+                const modalLabel = document.getElementById("globalModalLabel");
+                const modalBody = document.querySelector("#globalModal .modal-body p");
+                const confirmFinishButton = document.getElementById("confirmFinishButton");
 
-                // Opdater modalens indhold
-                if (challengeId === "1") {
-                    modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
-                    modalBody.textContent = "Hvis du er færdig med 'Saml affald i skolegården', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
-                } else if (challengeId === "2") {
-                    modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
-                    modalBody.textContent = "Hvis du er færdig med 'Præsentér en bæredygtig idé', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
-                }
+                finishButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        const challengeId = button.getAttribute("data-challenge-id");
 
-                // Tilføj event til "Afslut udfordring"-knappen
-                confirmFinishButton.onclick = () => {
-                    console.log(`Udfordring ${challengeId} afsluttet!`);
-                    // Tilføj yderligere logik her, fx opdatering af points
-                };
-            });
-        });
+                        // Opdater modalens indhold
+                        if (challengeId === "1") {
+                            modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
+                            modalBody.textContent = "Hvis du er færdig med 'Saml affald i skolegården', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
+                        } else if (challengeId === "2") {
+                            modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
+                            modalBody.textContent = "Hvis du er færdig med 'Præsentér en bæredygtig idé', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
+                        }
+
+                        // Tilføj event til "Afslut udfordring"-knappen
+                        confirmFinishButton.onclick = () => {
+
+                            // Luk "globalModal"
+                            const globalModal = bootstrap.Modal.getInstance(document.getElementById("globalModal"));
+                            if (globalModal) {
+                                globalModal.hide();
+                            }
+
+                            // Vis "successModal" efter en kort forsinkelse
+                            setTimeout(() => {
+                                const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+                                successModal.show();
+                            }, 300);
+                        };
+                    });
+                });
+            })
+            .catch(error => console.error("Fejl ved indlæsning af modals:", error));
     });
+
+
 
 
 </script>
