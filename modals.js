@@ -9,36 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
             const modalBody = modal.querySelector("#globalModalBody");
             const confirmFinishButton = document.getElementById("confirmFinishButton");
 
-            // Håndter knapper med "Tag udfordring" og "Afslut udfordring"
+            // Event listener for "challenge-action" knapper
             document.querySelectorAll(".challenge-action").forEach((button) => {
-                button.addEventListener("click", () => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault(); // Forhindrer standard "a href"-adfærd
                     const challengeId = button.getAttribute("data-challenge-id");
 
                     if (button.textContent.trim() === "Tag udfordring") {
-                        // Skift tekst til "Afslut udfordring"
+                        // Skift tekst og modal-attributter
                         button.textContent = "Afslut udfordring";
-
-                        // Tilføj modal-attributter
                         button.setAttribute("data-bs-toggle", "modal");
                         button.setAttribute("data-bs-target", "#globalModal");
                     } else if (button.textContent.trim() === "Afslut udfordring") {
-                        // Opdater modalindhold baseret på udfordring
+                        // Dynamisk opdater modal-indhold
                         if (challengeId === "1") {
                             modalTitle.textContent = "Afslut udfordring: Saml affald i skolegården";
                             modalBody.textContent =
-                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
+                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
                         } else if (challengeId === "2") {
                             modalTitle.textContent = "Afslut udfordring: Præsentér en idé";
                             modalBody.textContent =
-                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
-                        } else if (challengeId === "3") {
-                            modalTitle.textContent = "Afslut udfordring: Tag et bad på under 5 minutter";
-                            modalBody.textContent =
-                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
+                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
                         } else {
                             modalTitle.textContent = "Afslut udfordring";
                             modalBody.textContent = "Ingen specifik udfordring valgt.";
                         }
+                        // Åbn modal
+                        const globalModalInstance = bootstrap.Modal.getOrCreateInstance(modal);
+                        globalModalInstance.show();
                     }
                 });
             });
