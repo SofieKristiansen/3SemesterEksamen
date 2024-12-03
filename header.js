@@ -13,19 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const pageTitle = document.querySelector("#page-title");
             const currentPage = window.location.pathname.split("/").pop();
 
-            console.log("Current Page:", currentPage);
-
             const pageData = {
                 "dashboard.html": null,
                 "udfordringer.html": "Udfordringer",
+                "leaderboard.html": "Placeringer",
             };
 
             if (pageData[currentPage] === null) {
-                console.log("Skjuler tilbagepil og titel");
+
                 backButton.style.display = "none";
                 pageTitle.style.display = "none";
             } else {
-                console.log("Viser tilbagepil og titel");
+
                 backButton.style.display = "inline-flex";
                 pageTitle.style.display = "block";
                 pageTitle.textContent = pageData[currentPage];

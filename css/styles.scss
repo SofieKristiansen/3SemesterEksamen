@@ -16,6 +16,7 @@ $link-decoration: none;
 // 4. Include any default map overrides here
 $custom-colors: (
 				"tekstfarve": #fefbf6,
+				"sekundærtekstfarve": #24251A,
 				"baggrund": #24251a,
 				"primærkort": #4e503e,
 				"sekundærkort": #6c6f57,
@@ -64,4 +65,14 @@ h6 {
 .brødtekst {
 	color: map-get($custom-colors, "tekstfarve");
 	font-family: "inter", sans-serif;
+}
+
+.brødtekstSekundær {
+	color: map-get($custom-colors, "sekundærtekstfarve");
+	font-family: "inter", sans-serif;
+}
+
+
+.accordion-item {
+	border: none; /* Fjern den hvide kant */
 }
