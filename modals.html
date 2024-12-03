@@ -1,26 +1,28 @@
 <!-- Modal eksempel -->
-<div class="modal fade" id="globalModal" tabindex="-1" aria-labelledby="globalModalLabel" aria-hidden="true">
+<div class="modal fade" id="globalModal" tabindex="-1" aria-labelledby="globalModalTitel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
-      <!-- Modal Header med grænse -->
+      <!-- Header -->
       <div class="modal-header border-bottom">
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
-      <!-- Modal Body med grænse -->
-      <div class="modal-body border-bottom">
-        <h5 class="modal-title pb-3 " id="globalModalLabel">Er du sikker på at du vil afslutte udfordringen?</h5>
-        <p class="brødtekst">Hvis du er færdig med udfordringen, kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.</p>
+      <!-- Body -->
+      <div class="modal-body border-bottom brødtekst">
+        <h5 class="modal-title pb-3" id="globalModalTitel"></h5>
+        <p id="globalModalBody"></p>
       </div>
-
-      <!-- Modal Footer med grænse -->
+      <!-- Footer -->
       <div class="modal-footer border-top">
         <button type="button" class="btn btn-sekundærknap rounded-pill" data-bs-dismiss="modal">Annullér</button>
-        <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" id="confirmFinishButton">Afslut udfordring</button>
+        <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" id="confirmFinishButton">
+          Afslut udfordring
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 <!-- Success Modal -->
