@@ -124,39 +124,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col">
-                            <div class="card rounded-5 bg-sekundærkort h-100 py-1">
-                                <div class="card-body text-tekstfarve">
-                                    <!-- Overskrift med pil til højre -->
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h6 class="card-title">Præsentér en bæredygtig idé</h6>
-                                        <button class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
-                                            <i class="bi bi-arrow-right fs-3"></i>
-                                        </button>
-                                    </div>
-
-                                    <!-- Tidspunkt -->
-                                    <div class="d-flex align-items-center pb-2 mb-2">
-                                        <i class="fa-regular fa-clock pe-2"></i>
-                                        <h6 class="card-subtitle brødtekst m-0">Udløber fredag d. 29/11</h6>
-                                    </div>
-
-                                    <!-- Point -->
-                                    <div class="d-flex">
-                                        <i class="fa-regular fa-star pe-2"></i>
-                                        <p class="brødtekst pe-3 brødtekst">100 point</p>
-                                    </div>
-
-                                    <!-- Knap i bunden m. modal -->
-                                    <a href="#" class="btn btn-primærknap brødtekst w-100 rounded-pill" data-bs-toggle="modal" data-bs-target="#globalModal" data-challenge-id="3">
-                                        Afslut udfordring
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- Se alle udfordringer -->
@@ -241,67 +208,76 @@
             .then(data => {
                 document.getElementById("modals-placeholder").innerHTML = data;
 
-                // Flyt al logik herind, når modalerne er blevet indlæst
                 const finishButtons = document.querySelectorAll('[data-bs-target="#globalModal"]');
-                const modalLabel = document.getElementById("globalModalLabel");
-                const modalBody = document.querySelector("#globalModal .modal-body p");
                 const confirmFinishButton = document.getElementById("confirmFinishButton");
 
                 finishButtons.forEach(button => {
                     button.addEventListener("click", () => {
                         const challengeId = button.getAttribute("data-challenge-id");
 
-                        // Opdater modalens indhold
-                        if (challengeId === "1") {
-                            modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
-                            modalBody.textContent = "Hvis du er færdig med 'Saml affald i skolegården', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
-                        } else if (challengeId === "2") {
-                            modalLabel.textContent = "Er du sikker på at du vil afslutte udfordringen?";
-                            modalBody.textContent = "Hvis du er færdig med 'Præsentér en bæredygtig idé', kan du trykke afslut udfordring og dine point bliver automatisk tilføjet til din konto.";
-                        }
-
-                        // Tilføj event til "Afslut udfordring"-knappen
                         confirmFinishButton.onclick = () => {
-                            // Luk "globalModal"
                             const globalModal = bootstrap.Modal.getInstance(document.getElementById("globalModal"));
                             if (globalModal) {
                                 globalModal.hide();
                             }
 
-                            // Vis "successModal" efter en kort forsinkelse
                             setTimeout(() => {
                                 const successModal = new bootstrap.Modal(document.getElementById("successModal"));
                                 successModal.show();
 
-                                // Find canvas inde i modal
+                                // Find canvas til konfetti
                                 const confettiCanvas = document.querySelector("#successModal #confettiCanvas");
 
-                                // Aktivér konfetti, når successModal vises
-                                const myConfetti = confetti.create(confettiCanvas, { resize: true });
+                                // Start konfetti
+                                if (confettiCanvas) {
+                                    const myConfetti = confetti.create(confettiCanvas, { resize: true });
+                                    myConfetti({
+                                        particleCount: 600,
+                                        spread: 120,
+                                        startVelocity: 50,
+                                        gravity: 2,
+                                        scalar: 1.3,
+                                        origin: { x: 0.5, y: 0.5 },
+                                    });
 
-                                // Lav en langsommere og mere jævn konfettieffekt
-                                myConfetti({
-                                    particleCount: 600, // Antal partikler
-                                    spread: 120, // Spredning af konfettien
-                                    startVelocity: 50, // Start hastighed (lavere værdi = langsommere)
-                                    gravity: 1.5, // Gravitationsstyrke (lavere værdi = langsommere fald)
-                                    scalar: 1.3, // Størrelse på partiklerne
-                                    origin: {x: 2, y: 0.9 } // Startpunkt (midten af skærmen)
-                                });
+                                    // Stop konfetti efter 15 sekunder
+                                    setTimeout(() => {
+                                        confettiCanvas.getContext("2d").clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                                    }, 15000);
+                                }
 
-                                // Stop konfettien efter 10 sekunder
-                                setTimeout(() => {
-                                    confettiCanvas.getContext("2d").clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-                                }, 10000); // Tid for at rydde canvas
+                                // Start puls-animation på tekst
+                                const pointsText = document.querySelector("#successModal .point");
+                                if (pointsText) {
+                                    let scale = 1;
+                                    let growing = true;
+
+                                    // Puls-effekt med setInterval
+                                    const pulseInterval = setInterval(() => {
+                                        scale = growing ? scale + 0.05 : scale - 0.05;
+                                        if (scale >= 1.3) growing = false;
+                                        if (scale <= 1) growing = true;
+
+                                        pointsText.style.transform = `scale(${scale})`;
+                                        pointsText.style.transition = "transform 0.1s ease";
+                                    }, 100);
+
+                                    // Stop puls-animation, når modal lukkes
+                                    const successModalElement = document.getElementById("successModal");
+                                    successModalElement.addEventListener("hidden.bs.modal", () => {
+                                        clearInterval(pulseInterval);
+                                        pointsText.style.transform = "scale(1)";
+                                    });
+                                }
                             }, 300);
-
-
                         };
                     });
                 });
             })
             .catch(error => console.error("Fejl ved indlæsning af modals:", error));
     });
+
+
 
 
 
