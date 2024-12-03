@@ -4,30 +4,41 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
             document.getElementById("modals-placeholder").innerHTML = data;
 
-            const finishButtons = document.querySelectorAll('[data-bs-target="#globalModal"]');
-            const confirmFinishButton = document.getElementById("confirmFinishButton");
-
-            // Modal til dynamisk indhold
             const modal = document.getElementById("globalModal");
             const modalTitle = modal.querySelector("#globalModalTitel");
             const modalBody = modal.querySelector("#globalModalBody");
+            const confirmFinishButton = document.getElementById("confirmFinishButton");
 
-            finishButtons.forEach((button) => {
+            // Håndter knapper med "Tag udfordring" og "Afslut udfordring"
+            document.querySelectorAll(".challenge-action").forEach((button) => {
                 button.addEventListener("click", () => {
                     const challengeId = button.getAttribute("data-challenge-id");
 
-                    // Dynamisk opdatering af modalens indhold
-                    if (challengeId === "1") {
-                        modalTitle.textContent = "Afslut udfordring: Saml affald i skolegården";
-                        modalBody.textContent =
-                            "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
-                    } else if (challengeId === "2") {
-                        modalTitle.textContent = "Afslut udfordring: Præsentér en idé";
-                        modalBody.textContent =
-                            "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
-                    } else {
-                        modalTitle.textContent = "Afslut udfordring";
-                        modalBody.textContent = "Ingen specifik udfordring valgt.";
+                    if (button.textContent.trim() === "Tag udfordring") {
+                        // Skift tekst til "Afslut udfordring"
+                        button.textContent = "Afslut udfordring";
+
+                        // Tilføj modal-attributter
+                        button.setAttribute("data-bs-toggle", "modal");
+                        button.setAttribute("data-bs-target", "#globalModal");
+                    } else if (button.textContent.trim() === "Afslut udfordring") {
+                        // Opdater modalindhold baseret på udfordring
+                        if (challengeId === "1") {
+                            modalTitle.textContent = "Afslut udfordring: Saml affald i skolegården";
+                            modalBody.textContent =
+                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
+                        } else if (challengeId === "2") {
+                            modalTitle.textContent = "Afslut udfordring: Præsentér en idé";
+                            modalBody.textContent =
+                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
+                        } else if (challengeId === "3") {
+                            modalTitle.textContent = "Afslut udfordring: Tag et bad på under 5 minutter";
+                            modalBody.textContent =
+                                "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet.";
+                        } else {
+                            modalTitle.textContent = "Afslut udfordring";
+                            modalBody.textContent = "Ingen specifik udfordring valgt.";
+                        }
                     }
                 });
             });
@@ -93,3 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error) => console.error("Fejl ved indlæsning af modals:", error));
 });
+
