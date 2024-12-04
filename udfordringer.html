@@ -40,8 +40,16 @@
     <div class="row justify-content-center mb-5">
       <div class="col-auto">
         <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
-          <!-- Billedet med klik -->
-          <img src="img/lyspære.webp" alt="Ikon 1" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+          <!-- Brug af <picture> for flere billedkilder -->
+          <picture>
+            <!-- Større billede til brede skærme -->
+            <source srcset="img/pære-stor.png" type="image/webp" media="(min-width: 768px)">
+            <!-- Mindre billede til smalle skærme -->
+            <source srcset="img/pære-lille.png" type="image/webp" media="(max-width: 767px)">
+            <!-- Standardbillede -->
+            <img src="img/pære-stor.png" alt="Ikon 1" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+          </picture>
+
         </div>
       </div>
     </div>
@@ -79,13 +87,34 @@
     <!-- Nederste ikoner -->
     <div class="row justify-content-center mt-5 gap-5">
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-          <img src="path/to/your-image2.png" alt="Ikon 2" class="img-fluid" style="max-width: 70%;">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+          <!-- Brug af <picture> for flere billedkilder -->
+          <picture>
+            <!-- Større billede til brede skærme -->
+            <source srcset="img/Recycle-stor.png" type="image/webp" media="(min-width: 768px)">
+            <!-- Mindre billede til smalle skærme -->
+            <source srcset="img/Recycle-lille.png" type="image/webp" media="(max-width: 767px)">
+            <!-- Standardbillede -->
+            <img src="img/pære-stor.png" alt="Ikon 1" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+          </picture>
+
         </div>
       </div>
+
+
+
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-          <img src="path/to/your-image3.png" alt="Ikon 3" class="img-fluid" style="max-width: 70%;">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+          <!-- Brug af <picture> for flere billedkilder -->
+          <picture>
+            <!-- Større billede til brede skærme -->
+            <source srcset="img/pære-stor.png" type="image/webp" media="(min-width: 768px)">
+            <!-- Mindre billede til smalle skærme -->
+            <source srcset="img/pære-lille.png" type="image/webp" media="(max-width: 767px)">
+            <!-- Standardbillede -->
+            <img src="img/pære-stor.png" alt="Ikon 1" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+          </picture>
+
         </div>
       </div>
     </div>
