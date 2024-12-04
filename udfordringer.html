@@ -39,11 +39,34 @@
     <!-- Øverste ikon -->
     <div class="row justify-content-center mb-5">
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" >
-          <img src="img/lyspære.webp" alt="Ikon 1" class="img-fluid" style="max-width: 70%;">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+          <!-- Billedet med klik -->
+          <img src="img/lyspære.webp" alt="Ikon 1" class="img-fluid" style="max-width: 70%;" data-bs-toggle="modal" data-bs-target="#lightModal">
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="lightModal" tabindex="-1" aria-labelledby="lightModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
+          <!-- Modal Header -->
+          <div class="modal-header ">
+            <h4 class="modal-title" id="lightModalLabel">Sjovt fakta om lys!</h4>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Luk"></button>
+          </div>
+          <!-- Modal Body -->
+          <div class="modal-body brødtekst">
+            <p class="text-start">🌟 Vidste du, at LED-pærer bruger op til 90% mindre energi end gammeldags glødepærer? Det betyder, at hvis alle skoler i Danmark skiftede til LED, kunne vi spare energi svarende til 50.000 husstandes forbrug hvert år! Så er det godt for både miljøet og elregningen! 💡</p>
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" data-bs-dismiss="modal">Forstået!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Central tekst -->
     <div class="row justify-content-center mb-4">
