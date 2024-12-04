@@ -75,6 +75,12 @@ h6 {
 	font-family: "inter", sans-serif;
 }
 
+.overlay-content{
+	border-top-left-radius: 40px;  /* Runde øverste venstre hjørne */
+	border-top-right-radius: 40px; /* Runde øverste højre hjørne */
+	overflow: hidden;
+}
+
 .bartekst {
 	font-family: "inter", sans-serif;
 	color: map-get($custom-colors, "sekundærtekstfarve");
