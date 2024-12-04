@@ -24,7 +24,10 @@ $custom-colors: (
 				"sekundærknap": #24251a,
 				"primærikon": #d47d0d,
 				"sekundærikon": #fefbf6,
-				"navbar":#171710,
+				"navbar": #171710,
+				"guldfarve":#ffd700,
+				"sølvfarve": #d9d9d9,
+				"bronzefarve": #cd7f32,
 );
 
 // Denne kode genererer automatisk CSS-variabler baseret på $custom-colors-mappet, så de kan bruges i JavaScript og direkte i CSS som f.eks. var(--primærikon).
@@ -72,7 +75,32 @@ h6 {
 	font-family: "inter", sans-serif;
 }
 
+.bartekst {
+	font-family: "inter", sans-serif;
+	color: map-get($custom-colors, "sekundærtekstfarve");
+	font-size: small;
+}
 
 .accordion-item {
 	border: none; /* Fjern den hvide kant */
 }
+
+
+.bar-1 {
+	height: 175px;
+	width: 80px;
+	font-size: xxx-large;
+}
+.bar-2 {
+	height: 130px;
+	width: 70px;
+	font-size: xx-large;
+}
+.bar-3 {
+	height: 100px;
+	width: 60px;
+	font-size: x-large;
+}
+
+
+
