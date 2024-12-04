@@ -103,4 +103,17 @@ h6 {
 }
 
 
+.image-container {
+	display: inline-block;
+	overflow: hidden; /* Forhindrer billedet i at "bryde ud" */
+}
+
+.hover-image {
+	width: 100%; /* Sæt billedets standardbredde */
+	transition: transform 0.3s ease; /* Glidende overgang, når billedet bliver større */
+}
+
+.hover-image:hover {
+	transform: scale(1.2); /* Forstør billedet til 120% */
+}
 
