@@ -15,12 +15,14 @@
 </head>
 <body class="bg-baggrund text-tekstfarve">
 
-<br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!-- Header -->
 <div id="header-placeholder"></div>
-
-<br><br>
 
 <div id="navbar-placeholder"></div>
 
@@ -28,13 +30,13 @@
     <!-- Toggle knapper -->
     <section>
         <div class="container">
-            <div class="d-flex justify-content-center my-4">
+            <div class="d-flex justify-content-center my-4 py">
                 <div class="border border-light rounded-pill w-100">
                     <div class="btn-group w-100" role="group" aria-label="Toggle options">
                         <input type="radio" class="btn-check" name="toggleOption" id="klasseOption" autocomplete="off" checked>
-                        <label class="btn rounded-5 w-50 py-3 brødtekst" for="klasseOption">Klasse</label>
+                        <label class="btn rounded-5 w-50 py-2 brødtekst" for="klasseOption">Klasse</label>
                         <input type="radio" class="btn-check" name="toggleOption" id="individuelOption" autocomplete="off">
-                        <label class="btn rounded-5 w-50 py-3 brødtekst" for="individuelOption">Individuel</label>
+                        <label class="btn rounded-5 w-50 py-2 brødtekst" for="individuelOption">Individuel</label>
                     </div>
                 </div>
             </div>
@@ -46,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <!-- Klasse leaderboard -->
-                <div class="col" id="klasseLeaderboard">
+                <div class="col" id="klasseLeaderboard" data-leaderboard="1">
                     <div class="card rounded-5 bg-sekundærkort h-100 py-1 pb-0">
                         <div class="card-body text-tekstfarve pb-0">
                             <div class="d-flex align-items-center mb-3 vstack mb-5">
@@ -81,11 +83,11 @@
                 </div>
 
                 <!-- Individuelt leaderboard skjult som standard -->
-                <div class="col" id="individuelLeaderboard" style="display:none;">
+                <div class="col" id="individuelLeaderboard" data-leaderboard="2" style="display:none;">
                     <div class="card rounded-5 bg-sekundærkort h-100 py-1 pb-0">
                         <div class="card-body text-tekstfarve pb-0">
                             <div class="d-flex align-items-center mb-3 vstack mb-5">
-                                <h6 class="card-title">Top 3 Individuel</h6>
+                                <h6 class="card-title">Top 3</h6>
                                 <h6 class="card-title">December måned</h6>
                             </div>
                             <div class="d-flex justify-content-center align-items-end gap-4">
@@ -132,13 +134,13 @@
             <div class="row">
                 <div class="col">
                     <div class="card rounded-5 bg-sekundærkort py-1 mt-4 mb-4 pt-4 ps-3 pe-4">
-                        <div class="brødtekst text-tekstfarve">
-                            <p>Flot arbejde, 7. B! I ligger stadig i front - kan I holde føringen?</p>
+                        <div class="brødtekst text-tekstfarve" id="leaderboard-text-1">
+                            <!-- Dynamisk opdateret tekst -->
                         </div>
-                        <div class="brødtekst text-tekstfarve mt-3">
-                            <p>Hjælp din klasse med at holde sig i toppen - færdiggør flere udfordringer i dag!</p>
+                        <div class="brødtekst text-tekstfarve mt-3" id="leaderboard-text-2">
+                            <!-- Dynamisk opdateret tekst -->
                         </div>
-                        <div class="d-flex justify-content-end pe-3 mt-4 mb-4">
+                        <div class="d-flex justify-content-end mt-4 mb-4">
                             <a href="udfordringer.html"><button class="btn btn-sekundærknap rounded-pill brødtekst">Se alle udfordringer</button></a>
                         </div>
                     </div>
@@ -146,6 +148,7 @@
             </div>
         </div>
     </section>
+
 </main>
 
 <br><br><br>
@@ -157,7 +160,7 @@
 <script src="modals.js"></script>
 
 <script>
-    window.onload = function() {
+    window.onload = function () {
         // Initialt: sæt baggrundsfarve på den valgte knap ved indlæsning
         if (document.getElementById('klasseOption').checked) {
             document.getElementById('klasseOption').nextElementSibling.style.background = '#fefbf6'; // Baggrund for valgt "Klasse"
@@ -167,7 +170,7 @@
         }
     };
 
-    document.getElementById('individuelOption').addEventListener('change', function() {
+    document.getElementById('individuelOption').addEventListener('change', function () {
         // Når Individuel er valgt
         document.getElementById('individuelOption').nextElementSibling.style.background = '#fefbf6'; // Baggrund for valgt
         document.getElementById('klasseOption').nextElementSibling.style.background = 'none'; // Ingen baggrund for ikke-valgt
@@ -180,7 +183,7 @@
         document.getElementById('individuelLeaderboard').style.display = 'block';
     });
 
-    document.getElementById('klasseOption').addEventListener('change', function() {
+    document.getElementById('klasseOption').addEventListener('change', function () {
         // Når Klasse er valgt
         document.getElementById('individuelOption').nextElementSibling.style.background = 'none'; // Ingen baggrund for ikke-valgt
         document.getElementById('klasseOption').nextElementSibling.style.background = '#fefbf6'; // Baggrund for valgt
@@ -194,7 +197,38 @@
 
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        // Tekst, der skal opdateres
+        const leaderboardTexts = {
+            1: {
+                header: "Flot arbejde, 7. B! I ligger stadig i front - kan I holde føringen?",
+                subheader: "Hjælp din klasse med at holde sig i toppen - færdiggør flere udfordringer i dag!",
+            },
+            2: {
+                header: "Godt gået, SN! Du har lige nu samlet flest point og hjælper din klasse",
+                subheader: "Bliv ved med at tage udfordringer, og fasthold din plads i toppen!",
+            }
+        };
 
+        // Håndter skift mellem Klasse og Individuel
+        const toggleButtons = document.querySelectorAll('input[name="toggleOption"]');
+        toggleButtons.forEach(button => {
+            button.addEventListener("change", function () {
+                const selectedOption = this.id === "klasseOption" ? 1 : 2;
+
+                // Skift synlighed af leaderboards
+                document.getElementById("klasseLeaderboard").style.display = selectedOption === 1 ? "block" : "none";
+                document.getElementById("individuelLeaderboard").style.display = selectedOption === 2 ? "block" : "none";
+
+                // Opdater tekst-indhold for leaderboard
+                document.getElementById("leaderboard-text-1").innerHTML = `<p>${leaderboardTexts[selectedOption].header}</p>`;
+                document.getElementById("leaderboard-text-2").innerHTML = `<p>${leaderboardTexts[selectedOption].subheader}</p>`;
+            });
+        });
+
+        // Initial state
+        toggleButtons[0].dispatchEvent(new Event("change"));
+    });
 
 </script>
 
