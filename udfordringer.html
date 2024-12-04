@@ -35,20 +35,40 @@
 <br>
 
 <aside>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col">
-                <img src="#" alt="Miljø" class="img-fluid clickable" data-info="miljo">
-            </div>
-            <div class="col">
-                <img src="#" alt="Innovation" class="img-fluid clickable" data-info="innovation">
-            </div>
-            <div class="col">
-                <img src="#" alt="Samarbejde" class="img-fluid clickable" data-info="samarbejde">
-            </div>
+  <div class="container text-center my-5">
+    <!-- Øverste ikon -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-auto">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" >
+          <img src="img/lyspære.webp" alt="Ikon 1" class="img-fluid" style="max-width: 70%;">
         </div>
+      </div>
     </div>
+
+    <!-- Central tekst -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-12">
+        <h4>Infographic</h4>
+        <p class="">Klik på et ikon</p>
+      </div>
+    </div>
+
+    <!-- Nederste ikoner -->
+    <div class="row justify-content-center mt-5 gap-5">
+      <div class="col-auto">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+          <img src="path/to/your-image2.png" alt="Ikon 2" class="img-fluid" style="max-width: 70%;">
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+          <img src="path/to/your-image3.png" alt="Ikon 3" class="img-fluid" style="max-width: 70%;">
+        </div>
+      </div>
+    </div>
+  </div>
 </aside>
+
 
 <br>
 <br>
@@ -69,7 +89,7 @@
             <!-- Udfordring: (Saml affald i skolegården) -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
                         type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   Saml affald i skolegården
@@ -120,7 +140,7 @@
             <!-- Udfordring: Præsentér en bæredygtig idé -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
                         type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Præsentér en bæredygtig idé
@@ -171,7 +191,7 @@
             <!-- Udfordring: Tag et bad på under 5 minutter -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-4"
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
                         type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Tag et bad på under 5 minutter
@@ -245,6 +265,7 @@
 <script src="header.js"></script>
 <script src="navbar.js"></script>
 <script src="modals.js"></script>
+<script src="localstorage.js"></script>
 
 
 <script>
@@ -258,6 +279,13 @@
       }
     }
   });
+
+  document.querySelectorAll('.icon').forEach((icon) => {
+    icon.addEventListener('click', () => {
+      alert(`Du klikkede på ${icon.alt}`);
+    });
+  });
+
 
 </script>
 
