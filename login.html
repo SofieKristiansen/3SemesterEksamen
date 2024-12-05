@@ -21,7 +21,17 @@
 </head>
 <body>
 
-<div><img src="img/#" alt="Skov"></div>
+<div>
+    <!-- Brug af <picture> for flere billedkilder -->
+    <picture>
+        <!-- Større billede til brede skærme -->
+        <source srcset="img/#" type="image/webp" media="(min-width: 768px)">
+        <!-- Mindre billede til smalle skærme -->
+        <source srcset="img/baggrundMobil.webp" type="image/webp" media="(max-width: 767px)">
+        <!-- Standardbillede -->
+        <img src="img/#" alt="Baggrundsbillede" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+    </picture>
+</div>
 
 <div class="text-black m-5 text-center">LOGO</div>
 
@@ -29,7 +39,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="bg-baggrund bg-opacity-75 overlay-content fixed-bottom">
+            <div class="bg-opacity-75 overlay-content fixed-bottom">
                 <div class="col-10 col-sm-12 col-md-8 col-lg-6 col-xl-4 offset-1 offset-sm-0 offset-md-2 offset-lg-3 offset-xl-4">
                     <form action="dashboard.html" method="post">
 
