@@ -20,7 +20,7 @@
 
 
 </head>
-<body class="bg-baggrund text-tekstfarve">
+<body class="bg-baggrund">
 
 <br>
 <br>
@@ -35,11 +35,11 @@
 <br>
 
 <aside>
-  <div class="container text-center my-5">
+  <div class="container text-center">
     <!-- Øverste ikon -->
     <div class="row justify-content-center mb-5">
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+        <div class="hover-image">
           <!-- Brug af <picture> for flere billedkilder -->
           <picture>
             <!-- Større billede til brede skærme -->
@@ -47,9 +47,8 @@
             <!-- Mindre billede til smalle skærme -->
             <source srcset="img/environment-lille.webp" type="image/webp" media="(max-width: 767px)">
             <!-- Standardbillede -->
-            <img src="img/environment-lille.webp" alt="Ikon 1" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+            <img src="img/environment-lille.webp" alt="Miljø ikon" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
           </picture>
-
         </div>
       </div>
     </div>
@@ -64,8 +63,8 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Luk"></button>
           </div>
           <!-- Modal Body -->
-          <div class="modal-body brødtekst">
-            <p class="text-start">🌟 Vidste du, at LED-pærer bruger op til 90% mindre energi end gammeldags glødepærer? Det betyder, at hvis alle skoler i Danmark skiftede til LED, kunne vi spare energi svarende til 50.000 husstandes forbrug hvert år! Så er det godt for både miljøet og elregningen! 💡</p>
+          <div class="modal-body">
+            <p class="text-start brødtekst">🌟 Vidste du, at LED-pærer bruger op til 90% mindre energi end gammeldags glødepærer? Det betyder, at hvis alle skoler i Danmark skiftede til LED, kunne vi spare energi svarende til 50.000 husstandes forbrug hvert år! Så er det godt for både miljøet og elregningen! 💡</p>
           </div>
           <!-- Modal Footer -->
           <div class="modal-footer">
@@ -75,19 +74,16 @@
       </div>
     </div>
 
-
-    <!-- Central tekst -->
     <div class="row justify-content-center mb-4">
       <div class="col-12">
-        <h4>Infographic</h4>
-        <p class="">Klik på et ikon</p>
+        <h4>Prøv at klik på et ikon</h4>
       </div>
     </div>
 
     <!-- Nederste ikoner -->
     <div class="row justify-content-center mt-5 gap-5">
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+        <div class="hover-image mx-4 mx-md-5">
           <!-- Brug af <picture> for flere billedkilder -->
           <picture>
             <!-- Større billede til brede skærme -->
@@ -104,7 +100,7 @@
 
 
       <div class="col-auto">
-        <div class="hover-image rounded-circle d-flex justify-content-center align-items-center">
+        <div class="hover-image mx-4 mx-md-5">
           <!-- Brug af <picture> for flere billedkilder -->
           <picture>
             <!-- Større billede til brede skærme -->
@@ -117,8 +113,11 @@
 
         </div>
       </div>
+
     </div>
+
   </div>
+
 </aside>
 
 
@@ -131,24 +130,21 @@
     <div class="row">
       <div class="col">
         <div class="card bg-primærkort rounded-5">
-          <h5 class="fs-6 fs-md-4 fs-lg-4 mx-4 text-center pt-5 pb-4">
+          <h6 class="mx-4 text-center pt-5">
             Klar en udfordring, gør en forskel, og hjælp din klasse til tops!
-          </h5>
+          </h6>
 
           <!-- Accordion til udfordringer -->
-          <div class="accordion mt-4 mx-4" id="challengeAccordion">
+          <div class="accordion mt-5 mx-4">
 
             <!-- Udfordring: (Saml affald i skolegården) -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
-                        type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   Saml affald i skolegården
                 </button>
               </p>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                   data-bs-parent="#challengeAccordion">
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                 <div class="accordion-body">
                   <p class="brødtekstSekundær mt-2">
                     Hjælp med at holde skolegården ren og fri for skrald! Saml mindst 10 stykker affald, og gør en forskel for miljøet og jeres klasse.
@@ -192,14 +188,11 @@
             <!-- Udfordring: Præsentér en bæredygtig idé -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
-                        type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Præsentér en bæredygtig idé
                 </button>
               </p>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                   data-bs-parent="#challengeAccordion">
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                 <div class="accordion-body">
                   <p class="brødtekstSekundær mt-2">
                     Udvikl en idé, der kan forbedre bæredygtigheden på skolen. Præsenter din idé for klassekammeraterne og inspirér til handling.
@@ -243,14 +236,11 @@
             <!-- Udfordring: Tag et bad på under 5 minutter -->
             <div class="accordion-item mb-3 rounded-5">
               <p class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5"
-                        type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button class="accordion-button collapsed text-tekstfarve brødtekst bg-sekundærkort rounded-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Tag et bad på under 5 minutter
                 </button>
               </p>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                   data-bs-parent="#challengeAccordion">
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                 <div class="accordion-body">
                   <p class="brødtekstSekundær mt-2">
                     Spar på vandet ved at tage et hurtigt bad. Konkurrér med dine klassekammerater om at klare det på kortest tid!
@@ -322,6 +312,7 @@
 
 <script>
 
+  // Åbner vores accordion direkte fra dashboard siden med pilen til højre
   document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash;
     if (hash) {
@@ -331,13 +322,6 @@
       }
     }
   });
-
-  document.querySelectorAll('.icon').forEach((icon) => {
-    icon.addEventListener('click', () => {
-      alert(`Du klikkede på ${icon.alt}`);
-    });
-  });
-
 
 </script>
 
