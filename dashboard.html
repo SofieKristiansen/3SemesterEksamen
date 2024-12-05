@@ -14,7 +14,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -37,22 +37,20 @@
 
 <div class="container mt-4 mb-4">
     <div class="row">
-        <div class="col-12 text-start">
+        <div>
             <h1 class="display-5 display-md-3 display-lg-1 fw-normal">Hej Signe!</h1>
-            <p class="brødtekst fw-light fs-6 fs-md-5 fs-lg-4 ps-1">Velkommen tilbage</p>
+            <p class="brødtekst fw-light fs-5 ps-1">Velkommen tilbage</p>
         </div>
     </div>
 </div>
 
 
-
 <section>
     <div class="container">
-        <div class="alert alert-warning alert-dismissible fade show bg-primærkort border-0 d-flex justify-content-center align-items-center rounded-5" role="alert" style="height: 100px;">
-            <!-- Tekst -->
-            <p class="brødtekst text-center m-0 fs-6 ">Du har 2 udfordringer i gang</p>
-            <!-- Knappen -->
-            <button type="button" class="btn-close me-sm-2 btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="alert alert-warning alert-dismissible fade show bg-primærkort border-0 d-flex justify-content-center align-items-center rounded-5"
+             role="alert" style="height: 100px;">
+            <p class="brødtekst text-center m-0 fs-6 ps-4">Du har 2 udfordringer i gang</p>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
 </section>
@@ -60,39 +58,38 @@
 
 <main>
     <div class="container">
-        <div class="bg-primærkort rounded-5 mb-4 pb-4 mt-5">
 
-            <!-- Mine udfordringer -->
-            <h4 class="ps-4 pt-4 pb-4 ">Mine udfordringer</h4>
+        <section>
+            <div class="bg-primærkort rounded-5 pb-4 mt-5">
 
-            <section>
+                <h4 class="ps-4 py-4">Mine udfordringer</h4>
+
                 <div class="container">
-                    <div class="row row-cols-1 row-cols-md-2 g-4 dashboardContainer">
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
 
                         <!-- Kort 1 -->
                         <div class="col">
                             <div class="card rounded-5 bg-sekundærkort h-100 py-1">
                                 <div class="card-body text-tekstfarve">
+
                                     <!-- Overskrift med pil til højre -->
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h6 class="card-title">Saml affald i skolegården</h6>
-                                        <a href="udfordringer.html#collapseOne"
-                                           class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center"
-                                           style="width: 40px; height: 40px;">
+                                        <a href="udfordringer.html#collapseOne" class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
                                             <i class="bi bi-arrow-right fs-3"></i>
                                         </a>
                                     </div>
 
                                     <!-- Tidspunkt -->
-                                    <div class="d-flex align-items-center pb-2 mb-2">
-                                        <i class="fa-regular fa-clock pe-2"></i>
+                                    <div class="d-flex mb-3">
+                                        <i class="fa-regular fa-clock pe-3"></i>
                                         <h6 class="card-subtitle brødtekst m-0">Udløber i dag kl. 16:00</h6>
                                     </div>
 
                                     <!-- Point -->
                                     <div class="d-flex">
-                                        <i class="fa-regular fa-star pe-2"></i>
-                                        <p class="brødtekst pe-3 ">50 point</p>
+                                        <i class="fa-regular fa-star pe-3"></i>
+                                        <p class="brødtekst">50 point</p>
                                     </div>
 
                                     <!-- Knap i bunden m. modal -->
@@ -112,28 +109,28 @@
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h6 class="card-title">Præsentér en bæredygtig idé</h6>
                                         <a href="udfordringer.html#collapseTwo"
-                                           class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center"
-                                           style="width: 40px; height: 40px;">
+                                           class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
                                             <i class="bi bi-arrow-right fs-3"></i>
                                         </a>
                                     </div>
 
                                     <!-- Tidspunkt -->
-                                    <div class="d-flex align-items-center pb-2 mb-2">
-                                        <i class="fa-regular fa-clock pe-2"></i>
+                                    <div class="d-flex mb-3">
+                                        <i class="fa-regular fa-clock pe-3"></i>
                                         <h6 class="card-subtitle brødtekst m-0">Udløber fredag d. 29/11</h6>
                                     </div>
 
                                     <!-- Point -->
                                     <div class="d-flex">
-                                        <i class="fa-regular fa-star pe-2"></i>
-                                        <p class="brødtekst pe-3 brødtekst">100 point</p>
+                                        <i class="fa-regular fa-star pe-3"></i>
+                                        <p class="brødtekst">100 point</p>
                                     </div>
 
                                     <!-- Knap i bunden m. modal -->
                                     <a href="#" class="btn btn-primærknap brødtekst w-100 rounded-pill challenge-action" data-bs-toggle="modal" data-bs-target="#globalModal" data-challenge-id="2">
                                         Afslut udfordring
                                     </a>
+
                                 </div>
                             </div>
                         </div>
@@ -141,28 +138,30 @@
 
                     <!-- Se alle udfordringer -->
                     <div class="d-flex justify-content-end pe-3 mt-4">
-                        <a href="udfordringer.html"><button class="btn btn-sekundærknap rounded-pill brødtekst">Se alle udfordringer</button></a>
+                        <a href="udfordringer.html">
+                            <button class="btn btn-sekundærknap rounded-pill brødtekst">Se alle udfordringer</button>
+                        </a>
                     </div>
                 </div>
-            </section>
-
-        </div>
-
-        <div class="bg-primærkort rounded-5 mb-4 pb-4 mt-5">
-
-            <!-- Top 3 placeringer -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="ps-4 pt-4">Top 3 placering <br> <span class="brødtekst fs-6 fw-light">December måned</span></h4>
-                <button class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px;">
-                    <i class="bi bi-arrow-right fs-3"></i>
-                </button>
             </div>
+        </section>
 
-            <section>
+        <section>
+            <div class="bg-primærkort rounded-5 my-5 pb-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="ps-4 pt-4">Top 3 placering <br> <span class="brødtekst fs-6 fw-light">December måned</span> </h4>
+                    <button class="btn btn-sekundærknap rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px;">
+                        <i class="bi bi-arrow-right fs-3"></i>
+                    </button>
+                </div>
+
+
                 <!-- Placering for 7. B -->
                 <div class="mb-4 px-4">
                     <p class="brødtekst d-flex justify-content-between">
-                        <span>7. B</span> <span>750/1000 Point</span>
+                        <span>7. B</span>
+                        <span>750/1000 Point</span>
                     </p>
                     <div class="progress bg-sekundærkort" style="height: 25px;">
                         <div class="progress-bar bg-primærknap" role="progressbar" style="width: 75%;" aria-valuenow="750" aria-valuemin="0" aria-valuemax="1000"></div>
@@ -172,7 +171,8 @@
                 <!-- Placering for 7. C -->
                 <div class="mb-4 px-4">
                     <p class="brødtekst d-flex justify-content-between">
-                        <span>7. C</span> <span>500/1000 Point</span>
+                        <span>7. C</span>
+                        <span>500/1000 Point</span>
                     </p>
                     <div class="progress bg-sekundærkort" style="height: 25px;">
                         <div class="progress-bar bg-primærknap" role="progressbar" style="width: 50%;" aria-valuenow="500" aria-valuemin="0" aria-valuemax="1000"></div>
@@ -182,22 +182,21 @@
                 <!-- Placering for 7. A -->
                 <div class="mb-4 px-4">
                     <p class="brødtekst d-flex justify-content-between">
-                        <span>7. A</span> <span>400/1000 Point</span>
+                        <span>7. A</span>
+                        <span>400/1000 Point</span>
                     </p>
                     <div class="progress bg-sekundærkort" style="height: 25px;">
                         <div class="progress-bar bg-primærknap" role="progressbar" style="width: 40%;" aria-valuenow="400" aria-valuemin="0" aria-valuemax="1000"></div>
                     </div>
                 </div>
-            </section>
 
-        </div>
-
+            </div>
+        </section>
     </div>
-
-    <div id="modals-placeholder"></div>
-
 </main>
 
+
+<div id="modals-placeholder"></div>
 <div id="navbar-placeholder"></div>
 
 
@@ -215,9 +214,6 @@
 <script src="https://kit.fontawesome.com/e1b81ca238.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-
-</script>
 
 </body>
 </html>
