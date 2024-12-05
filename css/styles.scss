@@ -51,7 +51,7 @@ h1 {
 h4 {
 	color: map-get($custom-colors, "tekstfarve");
 	font-family: "Montserrat", sans-serif;
-	font-weight: 500; // Medium skriftstørrelse
+
 }
 
 h5 {
@@ -62,7 +62,7 @@ h5 {
 h6 {
 	color: map-get($custom-colors, "tekstfarve");
 	font-family: "Montserrat", sans-serif;
-	font-weight: 500; // Medium skriftstørrelse
+
 }
 
 .brødtekst {
@@ -131,7 +131,6 @@ h6 {
 }
 
 .hover-image {
-	width: 100%; /* Sæt billedets standardbredde */
 	transition: transform 0.3s ease; /* Glidende overgang, når billedet bliver større */
 }
 
