@@ -5,24 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("navbar-placeholder").innerHTML = data;
 
             const currentPage = window.location.pathname.split("/").pop();
-            console.log("Current Page:", currentPage);
 
             const navLinks = document.querySelectorAll(".nav-item");
 
             navLinks.forEach((link) => {
                 const page = link.getAttribute("data-page");
                 const icon = link.querySelector("i");
-
-                console.log(`Checking link: ${page}, current page: ${currentPage}`);
+                const text = link.querySelector(".nav-text");
 
                 if (page === currentPage) {
                     icon.style.fontSize = "2rem"; // Større ikon
                     icon.style.color = "var(--primærikon)"; // Primærfarve
-                    console.log(`Active link set to primary color: ${getComputedStyle(icon).color}`);
+
+                    text.style.fontSize = "1rem";
+                    text.style.color = "var(--primærikon)";
+
                 } else {
                     icon.style.fontSize = "1.5rem"; // Mindre ikon
                     icon.style.color = "var(--sekundærikon)"; // Sekundærfarve
-                    console.log(`Inactive link set to secondary color: ${getComputedStyle(icon).color}`);
+
+                    text.style.fontSize = "0.875rem";
+                    text.style.color = "var(--sekundærikon)";
                 }
             });
         })
