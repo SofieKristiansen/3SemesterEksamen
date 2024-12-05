@@ -75,11 +75,26 @@ h6 {
 	font-family: "inter", sans-serif;
 }
 
-.overlay-content{
-	border-top-left-radius: 40px;  /* Runde øverste venstre hjørne */
-	border-top-right-radius: 40px; /* Runde øverste højre hjørne */
-	overflow: hidden;
-	background-color: #4E503E;
+.baggrundsbillede picture img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.baggrundsbillede {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.overlay-logo{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 25%);
+	z-index: 3;
 }
 
 .bartekst {
