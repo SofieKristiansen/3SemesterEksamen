@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     e.preventDefault(); // Forhindrer standard "a href"-adfærd
                     const challengeId = button.getAttribute("data-challenge-id");
 
+                    // Definerer point baseret på challengeId
+                    let points = 0;
+                    if (challengeId === "1") {
+                        points = 50; // Point for udfordring 1
+                    } else if (challengeId === "2") {
+                        points = 100; // Point for udfordring 2
+                    }
+
                     if (button.textContent.trim() === "Tag udfordring") {
                         // Skift tekst og modal-attributter
                         button.textContent = "Afslut udfordring";
@@ -34,6 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             modalTitle.textContent = "Afslut udfordring";
                             modalBody.textContent = "Ingen specifik udfordring valgt.";
                         }
+
+                        // Opdater success-modal med point
+                        const pointsContainer = document.querySelector("#successModal .point");
+                        if (pointsContainer) {
+                            pointsContainer.textContent = `${points} Point`; // Sæt point i success-modal
+                        }
+
                         // Åbn modal
                         const globalModalInstance = bootstrap.Modal.getOrCreateInstance(modal);
                         globalModalInstance.show();
@@ -102,4 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error) => console.error("Fejl ved indlæsning af modals:", error));
 });
-
