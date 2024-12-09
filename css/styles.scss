@@ -138,3 +138,26 @@ h6 {
 	transform: scale(1.1); /* Forstør billedet til 120% */
 }
 
+.video-maskot {
+	width: 80px; /* Standardstørrelse for små skærme */
+	height: auto;
+}
+
+@media (min-width: 576px) { /* Mindre tablets */
+	.video-maskot {
+		width: 100px; /* Lidt større video */
+	}
+}
+
+@media (min-width: 768px) { /* Tablets og op */
+	.video-maskot {
+		width: 150px;
+	}
+}
+
+@media (min-width: 1200px) { /* Store skærme */
+	.video-maskot {
+		width: 250px;
+	}
+}
+
