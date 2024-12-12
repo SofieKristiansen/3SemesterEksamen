@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else if (button.textContent.trim() === "Afslut udfordring") {
                         // Dynamisk opdater modal-indhold
                         if (challengeId === "1") {
-                            modalTitle.textContent = "Afslut udfordring: Saml affald i skolegården";
+                            modalTitle.textContent = "Afslut udfordring: Saml affald i naturen";
                             modalBody.textContent =
                                 "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
                         } else if (challengeId === "2") {
