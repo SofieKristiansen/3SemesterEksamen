@@ -1,29 +1,36 @@
-<header>
+    <header>
     <!-- Øverste række: Logo og Klokke -->
-    <section class="fixed-top bg-navbar">
-        <div class="container">
-            <div class="row py-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <!-- Logo -->
-                    <div>
-                        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
-                             alt="Klasse Challenge Logo" class="img-fluid" style="max-height: 40px;">
-                    </div>
+        <section class="fixed-top bg-navbar">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Logo -->
+                        <div>
+                            <picture>
+                                <!-- Større billede til tablet og desktop -->
+                                <source srcset="img/logo-stor.webp" type="image/webp" media="(min-width: 768px)">
+                                <!-- Mindre billede til mobil -->
+                                <source srcset="img/logo-lille.webp" type="image/webp" media="(max-width: 767px)">
+                                <!-- Standardbillede -->
+                                <img src="img/logo-lille.webp" alt="Klasse Challenge Logo" class="img-fluid" style="max-height: 40px;">
+                            </picture>
+                        </div>
 
-                    <!-- Notifikation -->
-                    <aside>
-                        <button class="btn btn-link position-relative">
-                            <i class="bi bi-bell fs-5 text-sekundærikon"></i>
-                            <!-- Notifikationsbadge -->
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                        </button>
-                    </aside>
+                        <!-- Notifikation -->
+                        <aside>
+                            <button class="btn btn-link position-relative">
+                                <i class="bi bi-bell fs-5 text-sekundærikon"></i>
+                                <!-- Notifikationsbadge -->
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+                            </button>
+                        </aside>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-  <div class="container">
+
+        <div class="container">
     <div class="col">
       <div class="d-flex align-items-center position-relative mt-3 mb-2">
         <button id="back-button" class="btn text-tekstfarve btn-outline-baggrund position-absolute start-0" onclick="window.history.back()">
