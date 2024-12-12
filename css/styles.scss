@@ -49,6 +49,11 @@ h1 {
 	font-family: "Gluten", sans-serif;
 }
 
+h2 {
+	color: map-get($custom-colors, "tekstfarve");
+	font-family: "Gluten", sans-serif;
+}
+
 h3 {
 	color: map-get($custom-colors, "tekstfarve");
 	font-family: "Gluten", sans-serif;
