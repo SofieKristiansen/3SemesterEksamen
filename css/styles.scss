@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
@@ -45,34 +46,34 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 h1 {
 	color: map-get($custom-colors, "tekstfarve");
-	font-family: "Montserrat", sans-serif;
+	font-family: "Gluten", sans-serif;
 }
 
 h4 {
 	color: map-get($custom-colors, "tekstfarve");
-	font-family: "Montserrat", sans-serif;
+	font-family: "Gluten", sans-serif;
 
 }
 
 h5 {
 	color: map-get($custom-colors, "tekstfarve");
-	font-family: "Montserrat", sans-serif;
+	font-family: "Gluten", sans-serif;
 }
 
 h6 {
 	color: map-get($custom-colors, "tekstfarve");
-	font-family: "Montserrat", sans-serif;
+	font-family: "Gluten", sans-serif;
 
 }
 
 .brødtekst {
 	color: map-get($custom-colors, "tekstfarve");
-	font-family: "inter", sans-serif;
+	font-family: "Nunito Sans", sans-serif;
 }
 
 .brødtekstSekundær {
 	color: map-get($custom-colors, "sekundærtekstfarve");
-	font-family: "inter", sans-serif;
+	font-family: "Nunito Sans", sans-serif;
 }
 
 .baggrundsbillede picture img {
@@ -98,7 +99,7 @@ h6 {
 }
 
 .bartekst {
-	font-family: "inter", sans-serif;
+	font-family: "Nunito Sans", sans-serif;
 	color: map-get($custom-colors, "sekundærtekstfarve");
 	font-size: small;
 }
