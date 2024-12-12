@@ -47,29 +47,8 @@
             <!-- Mindre billede til smalle skærme -->
             <source srcset="img/environment-lille.webp" type="image/webp" media="(max-width: 767px)">
             <!-- Standardbillede -->
-            <img src="img/environment-lille.webp" alt="Pære med indhold af miljø" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+            <img src="img/environment-lille.webp" alt="Pære med indhold af miljø" class="img-fluid icon-trigger" style="cursor: pointer;" data-bs-target="#lightModal">
           </picture>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="lightModal" tabindex="-1" aria-labelledby="lightModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-sekundærkort text-tekstfarve rounded-5">
-          <!-- Modal Header -->
-          <div class="modal-header ">
-            <h4 class="modal-title" id="lightModalLabel">Sjovt fakta om lys!</h4>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Luk"></button>
-          </div>
-          <!-- Modal Body -->
-          <div class="modal-body">
-            <p class="text-start brødtekst">🌟 Vidste du, at LED-pærer bruger op til 90% mindre energi end gammeldags glødepærer? Det betyder, at hvis alle skoler i Danmark skiftede til LED, kunne vi spare energi svarende til 50.000 husstandes forbrug hvert år! Så er det godt for både miljøet og elregningen! 💡</p>
-          </div>
-          <!-- Modal Footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primærknap text-tekstfarve rounded-pill" data-bs-dismiss="modal">Forstået!</button>
-          </div>
         </div>
       </div>
     </div>
@@ -91,12 +70,10 @@
             <!-- Mindre billede til smalle skærme -->
             <source srcset="img/socials-lille.webp" type="image/webp" media="(max-width: 767px)">
             <!-- Standardbillede -->
-            <img src="img/socials-lille.webp" alt="Træ med blomster" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+            <img src="img/socials-lille.webp" alt="Træ med blomster" class="img-fluid icon-trigger" style="cursor: pointer;" data-bs-target="#socialsModal">
           </picture>
-
         </div>
       </div>
-
 
 
       <div class="col-auto">
@@ -108,8 +85,9 @@
             <!-- Mindre billede til smalle skærme -->
             <source srcset="img/government-lille.webp" type="image/webp" media="(max-width: 767px)">
             <!-- Standardbillede -->
-            <img src="img/government-lille.webp" alt="Vægtskål i balance" class="img-fluid" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#lightModal">
+            <img src="img/government-lille.webp" alt="Vægtskål i balance" class="img-fluid icon-trigger" style="cursor: pointer;"  data-bs-target="#governmentModal">
           </picture>
+
 
         </div>
       </div>
@@ -283,8 +261,6 @@
 
           </div>
 
-          <div id="modals-placeholder"></div>
-
         </div>
       </div>
     </div>
@@ -299,7 +275,7 @@
 <br>
 <br>
 
-
+<div id="modals-placeholder"></div>
 <div id="navbar-placeholder"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>

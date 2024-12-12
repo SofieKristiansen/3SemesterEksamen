@@ -2,7 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("modals.html")
         .then((response) => response.text())
         .then((data) => {
+
+            // Tilføj event listeners til icon-trigger knapper
+            document.querySelectorAll(".icon-trigger").forEach((icon) => {
+                icon.addEventListener("click", () => {
+                    const targetModalId = icon.getAttribute("data-bs-target");
+                    const targetModal = document.querySelector(targetModalId);
+                    if (targetModal) {
+                        const modalInstance = new bootstrap.Modal(targetModal);
+                        modalInstance.show();
+                    }
+                });
+            });
+
             document.getElementById("modals-placeholder").innerHTML = data;
+
 
             const modal = document.getElementById("globalModal");
             const modalTitle = modal.querySelector("#globalModalTitel");
@@ -116,4 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         })
         .catch((error) => console.error("Fejl ved indlæsning af modals:", error));
+
+
+
+
 });
