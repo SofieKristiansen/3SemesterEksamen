@@ -85,18 +85,32 @@ h6 {
 	font-family: "Nunito Sans", sans-serif;
 }
 
-.baggrundsbillede picture img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.baggrund {
+	margin: 0; // Fjern standard marginer
+	height: 100vh; // Sikrer, at baggrundsbilledet dækker hele skærmen
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	// Standard baggrundsbillede (mobil)
+	background-image: url('../img/MobilBaggrund.webp');
+
+	@media (min-width: 768px) {
+		// Baggrundsbillede for laptop og større skærme
+		background-image: url('../img/StorBaggrund.webp');
+	}
 }
 
-.baggrundsbillede {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+header {
+	position: relative;
+	z-index: 5;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
 	height: 100%;
+	overflow: hidden; // Fjern al scrolling
 }
 
 .overlay-logo{
