@@ -114,6 +114,23 @@ header {
 	z-index: 3;
 }
 
+.responsivt-logo {
+	width: 250px; /* Default size for mobile */
+	height: auto;
+}
+
+@media (min-width: 768px) {
+	.responsivt-logo {
+		width: 350px; /* Size for tablets */
+	}
+}
+
+@media (min-width: 1200px) {
+	.responsivt-logo {
+		width: 450px; /* Size for laptops and larger screens */
+	}
+}
+
 .bartekst {
 	font-family: "Nunito Sans", sans-serif;
 	color: map-get($custom-colors, "sekundærtekstfarve");
