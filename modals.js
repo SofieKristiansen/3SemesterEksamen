@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             modalBody.textContent =
                                 "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
                         } else if (challengeId === "2") {
-                            modalTitle.textContent = "Afslut udfordring: Præsentér en idé";
+                            modalTitle.textContent = "Afslut udfordring: Præsenter en klimavenlig idé";
                             modalBody.textContent =
                                 "Hvis du er færdig med udfordringen, kan du trykke afslut udfordring, og dine point bliver automatisk tilføjet til din konto.";
                         } else {
