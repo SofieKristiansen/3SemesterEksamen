@@ -39,12 +39,16 @@
             <p class="brødtekst fw-light fs-5 ps-1">Velkommen tilbage</p>
         </div>
 
-        <!-- Maskot (video) -->
+        <!-- Maskot -->
         <div class="col-auto">
-            <video autoplay loop muted playsinline class="video-maskot">
-                <source src="video/#" type="video/mp4">
-                Din browser understøtter ikke video.
-            </video>
+            <picture>
+                <!-- Større billede til brede skærme -->
+                <source srcset="img/skraldespand.webp" type="image/webp" media="(min-width: 768px)">
+                <!-- Mindre billede til smalle skærme -->
+                <source srcset="img/skraldespand-lille.webp" type="image/webp" media="(max-width: 767px)">
+                <!-- Standardbillede -->
+                <img src="img/skraldespand-lille.webp" alt="skraldespand maskot" class="img-fluid">
+            </picture>
         </div>
     </div>
 </div>
