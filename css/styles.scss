@@ -115,8 +115,19 @@ header {
 }
 
 .responsivt-logo {
-	width: 250px; /* Default size for mobile */
+	width: 200px; /* Default size for mobile */
 	height: auto;
+}
+
+@media (max-width: 767px) {
+	.overlay-logo {
+		top: 5%; /* Placér logoet lidt højere */
+		transform: translate(-50%, 0); /* Fjern vertikal forskydning for små skærme */
+	}
+
+	.fixed-bottom{
+		max-height: 65vh;
+	}
 }
 
 @media (min-width: 768px) {
